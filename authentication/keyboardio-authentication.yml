@@ -1,0 +1,38 @@
+generated: '2026-07-19'
+method: searched
+source: https://keyboard.io/.well-known/openid-configuration
+docs: https://keyboard.io/.well-known/openid-configuration
+note: >-
+  Keyboardio has no first-party HTTP API. The only auth surface on the domain
+  is Shopify Customer Accounts (OpenID Connect / OAuth 2.0) bound to
+  keyboard.io, used for customer login and the Shopify Customer Account API.
+  Issuer https://shopify.com/authentication/9200728; endpoints hosted at
+  account.keyboard.io.
+summary:
+  types:
+  - openIdConnect
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+  pkce: true
+schemes:
+- name: ShopifyCustomerAccountOIDC
+  type: openIdConnect
+  openIdConnectUrl: https://keyboard.io/.well-known/openid-configuration
+  issuer: https://shopify.com/authentication/9200728
+  authorization_endpoint: https://account.keyboard.io/authentication/oauth/authorize
+  token_endpoint: https://account.keyboard.io/authentication/oauth/token
+  end_session_endpoint: https://account.keyboard.io/authentication/logout
+  jwks_uri: https://account.keyboard.io/authentication/.well-known/jwks.json
+  grant_types:
+  - authorization_code
+  - refresh_token
+  - 'urn:ietf:params:oauth:grant-type:jwt-bearer'
+  code_challenge_methods:
+  - S256
+  token_endpoint_auth_methods:
+  - client_secret_basic
+  id_token_signing_alg:
+  - RS256
+  sources:
+  - well-known/keyboardio-openid-configuration.json
