@@ -1,7 +1,29 @@
 aid: keyboardio
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/keyboardio.png
 name: Keyboardio
-description: Keyboardio is a company surfaced as a portfolio company of bloomberg-beta and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Keyboardio is a hardware company that designs and sells premium ergonomic
+  mechanical keyboards, including the sculpted hardwood Model 100, the ultra-
+  portable Atreus, and the upcoming Preonic. Its keyboards run fully open-source,
+  reprogrammable firmware (Kaleidoscope) configured through the cross-platform
+  Chrysalis GUI, both developed in the open on GitHub. Keyboardio sells direct
+  through a Shopify storefront at shop.keyboard.io; customer login and account
+  management use Shopify Customer Accounts (OpenID Connect / OAuth 2.0) bound to
+  the keyboard.io domain. Keyboardio has no first-party public HTTP API — this
+  profile captures the real developer, open-source, and identity surfaces the
+  company publishes.
 url: https://raw.githubusercontent.com/api-evangelist/keyboardio/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +33,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
+- Mechanical Keyboards
+- Hardware
+- Ergonomics
+- Open Source
+- Firmware
+- Keyboards
+- E-commerce
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,4 +51,33 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: http://keyboard.io/
+  url: https://keyboard.io/
+- type: Support
+  url: https://shop.keyboard.io/pages/support
+- type: Blog
+  url: https://shop.keyboard.io/blogs/news
+- type: GitHubOrganization
+  url: https://github.com/keyboardio
+- type: SignUp
+  url: https://account.keyboard.io/
+- type: Pricing
+  url: https://shop.keyboard.io/
+- type: TermsOfService
+  url: https://shop.keyboard.io/policies/terms-of-service
+- type: PrivacyPolicy
+  url: https://shop.keyboard.io/policies/privacy-policy
+- type: WellKnown
+  url: well-known/keyboardio-well-known.yml
+- type: OpenIDConnect
+  url: well-known/keyboardio-openid-configuration.json
+- type: Authentication
+  url: authentication/keyboardio-authentication.yml
+- type: OAuthScopes
+  url: scopes/keyboardio-scopes.yml
+- type: DomainSecurity
+  url: security/keyboardio-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
