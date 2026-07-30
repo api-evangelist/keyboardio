@@ -1,0 +1,28 @@
+generated: '2026-07-19'
+method: searched
+source: live probe of https://keyboard.io/.well-known/*
+host: https://keyboard.io
+note: >-
+  keyboard.io is served by Shopify; the OpenID Connect / OAuth discovery
+  surface belongs to Shopify Customer Accounts bound to the keyboard.io
+  domain (issuer https://shopify.com/authentication/9200728). Auth endpoints
+  are hosted at account.keyboard.io. There is no first-party Keyboardio HTTP
+  API; this documents the real, live discovery documents on the domain.
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: keyboardio-openid-configuration.json
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  note: returns the same OpenID Connect discovery payload as openid-configuration
+  file: keyboardio-openid-configuration.json
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+related:
+- path: https://account.keyboard.io/authentication/.well-known/jwks.json
+  status: 200
+  note: JWKS referenced by jwks_uri in the discovery document
